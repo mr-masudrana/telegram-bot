@@ -2,11 +2,11 @@ name: Test Telegram Bot
 
 on:
   schedule:
-    - cron: "35 10 * * *"   # BD Time 16:10
+    - cron: "0 11 * * *"   # BD Time 16:30
   workflow_dispatch:
 
 jobs:
-  run-test:
+  send-message:
     runs-on: ubuntu-latest
 
     steps:
