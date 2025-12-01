@@ -2,7 +2,7 @@ name: Test Telegram Bot
 
 on:
   schedule:
-    - cron: "30 10 * * *"   # BD Time 16:10
+    - cron: "35 10 * * *"   # BD Time 16:10
   workflow_dispatch:
 
 jobs:
