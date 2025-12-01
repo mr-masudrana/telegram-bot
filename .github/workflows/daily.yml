@@ -1,0 +1,30 @@
+name: Daily Night Message
+
+on:
+  schedule:
+    # 18:00 UTC = 12:00 AM (Midnight) Bangladesh Time
+    - cron: '0 18 * * *'
+  workflow_dispatch: # এটি ম্যানুয়ালি টেস্ট করার জন্য বাটন অ্যাড করবে
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Bot Script
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: node index.js
+        
