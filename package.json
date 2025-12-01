@@ -1,5 +1,5 @@
 {
-  "name": "daily-telegram-bot",
+  "name": "telegram-bot",
   "version": "1.0.0",
   "description": "A simple telegram bot for daily updates hosted on GitHub Actions",
   "main": "index.js",
